@@ -5,7 +5,7 @@ export const initState = {
   todos: [],
 };
 
-import { todoStorage } from "@/helpers/cartStorage";
+import { todoStorage } from "@/helpers/todoStorage";
 
 const TodoListStore = createStore(reducer, todoStorage.get());
 

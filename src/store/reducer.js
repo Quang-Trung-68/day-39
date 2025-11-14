@@ -1,4 +1,4 @@
-import { todoStorage } from "@/helpers/cartStorage";
+import { todoStorage } from "@/helpers/todoStorage";
 import { ACTIONS } from "./constants";
 
 const reducer = (state, action) => {
@@ -9,7 +9,7 @@ const reducer = (state, action) => {
       todoStorage.set({ ...state, todos: newTodos });
       return { ...state, todos: newTodos };
     }
-    case ACTIONS.UPDATE_COMPLETED_TODO: {
+    case ACTIONS.CHECK_TODO: {
       const newTodos = state.todos.map((todo) => {
         if (todo.id === action.payload) {
           return { ...todo, isCompleted: !todo.isCompleted };

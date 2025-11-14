@@ -23,7 +23,7 @@ const TodoItem = ({ id, title, isCompleted }) => {
   };
 
   const handleToggleCompleted = () => {
-    dispatch({ type: ACTIONS.UPDATE_COMPLETED_TODO, payload: id });
+    dispatch({ type: ACTIONS.CHECK_TODO, payload: id });
   };
 
   const handleDelete = () => {
