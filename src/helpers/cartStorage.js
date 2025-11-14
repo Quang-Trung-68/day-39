@@ -1,11 +1,11 @@
-import { initialCart } from "@/pages/ShoppingCart/reducer";
+import { initState } from "@/store";
 
-export const cartStorage = {
-  set(newCart) {
-    localStorage.setItem("your_cart", JSON.stringify(newCart));
+export const todoStorage = {
+  set(newTodo) {
+    localStorage.setItem("your_todos", JSON.stringify(newTodo));
   },
   get() {
-    const yourCart = localStorage.getItem("your_cart");
-    return yourCart ? JSON.parse(yourCart) : initialCart;
+    const yourTodos = localStorage.getItem("your_todos");
+    return yourTodos ? JSON.parse(yourTodos) : initState;
   },
 };

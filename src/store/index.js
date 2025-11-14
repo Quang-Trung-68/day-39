@@ -1,8 +1,12 @@
 import { createStore } from "../libs/redux";
 import reducer from "./reducer";
 
-const initState = [];
+export const initState = {
+  todos: [],
+};
 
-const TodoListStore = createStore(reducer, initState);
+import { todoStorage } from "@/helpers/cartStorage";
+
+const TodoListStore = createStore(reducer, todoStorage.get());
 
 export default TodoListStore;

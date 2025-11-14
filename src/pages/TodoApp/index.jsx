@@ -1,37 +1,24 @@
-import { useDispatch, useStore } from "@/libs/react-redux";
-import { ACTIONS } from "@/store/constants";
-import { useState } from "react";
+import { useSelector } from "@/libs/react-redux";
 
-const AddTodo = () => {
-  const [value, setValue] = useState("");
-  const dispatch = useDispatch();
-  const handleAddTodo = () => {
-    const newTodo = {
-      id: Date.now(),
-      title: value,
-      isCompleted: false,
-    };
-    console.log(value, newTodo);
-    dispatch({ type: ACTIONS.ADD_TODO, payload: newTodo });
-    setValue("");
-  };
-  return (
-    <>
-      <input onChange={(e) => setValue(e.target.value)} value={value} />
-      <button onClick={handleAddTodo}>Add Todo</button>
-    </>
-  );
-};
+import TodoItem from "./TodoItem";
+import AddTodo from "./AddTodo";
+
+import "./todo.css";
 
 export default function TodoApp() {
-  const dispatch = useDispatch();
-  const state = useStore();
+  const todos = useSelector((state) => state.todos);
 
-  console.log(state.getState());
   return (
-    <>
+    <div className="todo-app">
+      <h2 className="todo-header">Todo List</h2>
+
       <AddTodo />
-      <button onClick={() => dispatch({ type: "test" })}>Test</button>
-    </>
+
+      {todos.length > 0 ? (
+        todos.map((todo) => <TodoItem key={todo.id} {...todo} />)
+      ) : (
+        <div className="todo-empty">The todo list is empty.</div>
+      )}
+    </div>
   );
 }

@@ -1,0 +1,109 @@
+/* Container */
+.todo-app {
+  width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Add Todo */
+.todo-add {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.25s;
+}
+
+.todo-input:focus {
+  border-color: #6c63ff;
+}
+
+.todo-add-btn {
+  padding: 10px 16px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.todo-add-btn:hover {
+  background: #584df2;
+}
+
+/* Todo item */
+.todo-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-edit-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-edit-btn,
+.todo-delete-btn {
+  width: 100px;
+  margin: 4px;
+}
+
+.todo-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.todo-title {
+  font-size: 16px;
+  color: #333;
+  transition: 0.25s;
+  max-width: 100%;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Empty state */
+.todo-empty {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
